@@ -9,6 +9,8 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.temporal.TemporalField;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
@@ -26,7 +28,7 @@ public class Exercise5Test {
         /**
          * Create a {@link java.sql.Timestamp} from {@link ldt}
          */
-        Timestamp timestamp = null;
+        Timestamp timestamp = Timestamp.valueOf(ldt);
 
         assertThat(timestamp.toString(), is("2015-06-18 23:07:30.5"));
     }
